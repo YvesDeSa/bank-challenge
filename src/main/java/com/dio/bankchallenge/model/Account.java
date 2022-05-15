@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -15,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
-@Entity
+@Entity(name = "tb_account")
 @Data
 public class Account {
   @Id
@@ -24,6 +25,7 @@ public class Account {
   @Column(name = "id", columnDefinition = "VARCHAR(255)")
   private UUID id;
 
+  @OneToOne
   @JoinColumn(nullable = false)
   @JsonIgnore
   private Client client;

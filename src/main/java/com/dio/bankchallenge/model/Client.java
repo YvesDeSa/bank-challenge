@@ -3,12 +3,14 @@ package com.dio.bankchallenge.model;
 import java.util.UUID;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
 import lombok.Data;
 
+@Entity(name = "tb_client")
 @Data
 public class Client {
   @Id
